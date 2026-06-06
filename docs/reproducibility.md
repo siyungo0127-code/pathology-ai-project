@@ -15,10 +15,10 @@ The repository contains analysis notebooks, summary documentation, generated
 figures, HTML reports, and a structured `data/` directory. Notebook input paths
 now use project-relative locations under `data/`.
 
-The expected input folders are present, but the required analysis data files
-were not found in the current local checkout. The DLBCL cohort 1 external
-validation files are intentionally not tracked in GitHub because of file size
-and/or data redistribution constraints.
+The DLBCL cohort 2 file, ESCC expression matrix, and supplementary CNN image
+inputs are present under `data/`. The DLBCL cohort 1 external validation files
+are intentionally not tracked in GitHub because of file size and/or data
+redistribution constraints.
 
 ## Required R Packages
 
@@ -87,25 +87,25 @@ The expected input data files are documented in more detail in
 
 | Analysis | Expected project-relative path | Included in current checkout? |
 | --- | --- | --- |
-| DLBCL training/internal testing | `data/dlbcl/cohort_2/DLBCL.cohort.2.rds` | No |
+| DLBCL training/internal testing | `data/dlbcl/cohort_2/DLBCL.cohort.2.rds` | Yes |
 | DLBCL external validation | `data/dlbcl/cohort_1/DLBCL.eSet.1.rds` | No. Local-only/manual placement. |
 | DLBCL external validation | `data/dlbcl/cohort_1/DLBCL.eSet.2.rds` | No. Local-only/manual placement. |
 | DLBCL external validation | `data/dlbcl/cohort_1/DLBCL.eSet.3.rds` | No. Local-only/manual placement. |
 | DLBCL external validation | `data/dlbcl/cohort_1/DLBCL.eSet.4.rds` | No. Local-only/manual placement. |
-| ESCC molecular subtyping | `data/escc/exp_data_ESCC_90samples.txt` | No |
+| ESCC molecular subtyping | `data/escc/exp_data_ESCC_90samples.txt` | Yes |
 
 ### CNN Image Inputs
 
 | Expected project-relative path | Included in current checkout? |
 | --- | --- |
-| `data/images/A1.jpg` | No |
-| `data/images/A2.jpg` | No |
-| `data/images/B1.jpg` | No |
-| `data/images/B2.jpg` | No |
-| `data/images/C1.jpg` | No |
-| `data/images/C2.jpg` | No |
-| `data/images/D1.jpg` | No |
-| `data/images/D2.jpg` | No |
+| `data/images/A1.jpg` | Yes |
+| `data/images/A2.jpg` | Yes |
+| `data/images/B1.jpg` | Yes |
+| `data/images/B2.jpg` | Yes |
+| `data/images/C1.jpg` | Yes |
+| `data/images/C2.jpg` | Yes |
+| `data/images/D1.jpg` | Yes |
+| `data/images/D2.jpg` | Yes |
 
 ## Recommended Directory Structure
 
@@ -177,14 +177,8 @@ software environments have been supplied.
 
 The following parts are not currently reproducible from a fresh clone:
 
-* DLBCL model training and internal testing, because
-  `data/dlbcl/cohort_2/DLBCL.cohort.2.rds` is not present in this checkout.
 * DLBCL external validation, because the cohort 1 `.rds` files are intentionally
   excluded from GitHub and must be manually supplied by authorized users.
-* ESCC molecular subtyping, because
-  `data/escc/exp_data_ESCC_90samples.txt` is not present in this checkout.
-* CNN image classification, because `data/images/A1.jpg` to `D2.jpg` are not
-  present in this checkout.
 * Exact package recreation, because no R or Python lockfile is included.
 * One-command execution, because there is no script, Makefile, workflow manager,
   or pipeline entry point.
@@ -200,7 +194,8 @@ download path.
 ## Known Limitations
 
 * Dataset provenance is incomplete.
-* Main input datasets are not present in this local checkout.
+* DLBCL cohort 2, ESCC, and CNN image inputs are present, but their source
+  metadata are incomplete.
 * Dataset accession numbers, publications, licenses, and redistribution terms
   are unknown.
 * The DLBCL cohort 1 external validation files are local-only because of file
@@ -235,9 +230,10 @@ download path.
 
 ## Practical Reproducibility Assessment
 
-Current reproducibility score: 5 out of 10.
+Current reproducibility score: 7 out of 10.
 
-The project now has clearer data organization, relative notebook paths, and
-documentation for local-only external validation files. It is still not fully
-rerunnable from a fresh clone because the required input data files are absent
-from this checkout and package environments are not pinned.
+The project now has clearer data organization, relative notebook paths, included
+core/supplementary input files, and documentation for local-only external
+validation files. It is still not fully reproducible because cohort 1 external
+validation requires manual authorized data placement, dataset provenance is
+incomplete, and package environments are not pinned.

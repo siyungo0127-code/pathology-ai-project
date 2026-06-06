@@ -187,10 +187,9 @@ data/
     D2.jpg
 ```
 
-The structured `data/` paths above are the expected locations used by the
-notebooks. In this checkout, the folders are prepared for reproducible local
-execution, but the required analysis data files may be absent unless they have
-been added by an authorized user.
+The structured `data/` paths above are the locations used by the notebooks. The
+DLBCL cohort 2 file, ESCC expression matrix, and supplementary CNN image inputs
+are included in this repository under `data/`.
 
 The DLBCL cohort 1 external validation `.rds` files are not tracked in GitHub
 because of file size and/or data redistribution constraints. To rerun the

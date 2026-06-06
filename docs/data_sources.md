@@ -8,19 +8,19 @@ marked explicitly.
 ## Current Repository Data Status
 
 The repository now uses a structured `data/` layout. In the current local
-checkout, the expected folders are present, but the required analysis data files
-listed below were not found. No dummy or synthetic replacement files have been
-created.
+checkout, the DLBCL cohort 2 file, ESCC expression matrix, and supplementary CNN
+image inputs are present under `data/`. The DLBCL cohort 1 external validation
+files are documented but intentionally not tracked.
 
 | Analysis | Expected file path | Purpose | Included in current checkout? | Source/accession/publication |
 | --- | --- | --- | --- | --- |
-| DLBCL Cell-of-Origin classification | `data/dlbcl/cohort_2/DLBCL.cohort.2.rds` | Main DLBCL gene expression dataset used for ABC vs GCB Cell-of-Origin model training and internal testing. | No | Not identified in the repository. |
+| DLBCL Cell-of-Origin classification | `data/dlbcl/cohort_2/DLBCL.cohort.2.rds` | Main DLBCL gene expression dataset used for ABC vs GCB Cell-of-Origin model training and internal testing. | Yes | Not identified in the repository. |
 | DLBCL external validation | `data/dlbcl/cohort_1/DLBCL.eSet.1.rds` | External validation input for the DLBCL Random Forest classifier. | No. Documented only. | Not identified in the repository. |
 | DLBCL external validation | `data/dlbcl/cohort_1/DLBCL.eSet.2.rds` | External validation input for the DLBCL Random Forest classifier. | No. Documented only. | Not identified in the repository. |
 | DLBCL external validation | `data/dlbcl/cohort_1/DLBCL.eSet.3.rds` | External validation input for the DLBCL Random Forest classifier. | No. Documented only. | Not identified in the repository. |
 | DLBCL external validation | `data/dlbcl/cohort_1/DLBCL.eSet.4.rds` | External validation input for the DLBCL Random Forest classifier. | No. Documented only. | Not identified in the repository. |
-| ESCC molecular subtyping | `data/escc/exp_data_ESCC_90samples.txt` | ESCC expression matrix used for NMF, consensus clustering, differential expression analysis, and GSEA. | No | Not identified in the repository. |
-| Supplementary CNN exercise | `data/images/A1.jpg` to `data/images/D2.jpg` | Image inputs for the supplementary CNN image classification notebook. | No | Not identified in the repository. |
+| ESCC molecular subtyping | `data/escc/exp_data_ESCC_90samples.txt` | ESCC expression matrix used for NMF, consensus clustering, differential expression analysis, and GSEA. | Yes | Not identified in the repository. |
+| Supplementary CNN exercise | `data/images/A1.jpg` to `data/images/D2.jpg` | Image inputs for the supplementary CNN image classification notebook. | Yes | Not identified in the repository. |
 
 ## DLBCL Datasets Used
 
@@ -34,8 +34,7 @@ vs GCB classification.
   `Biobase::exprs()` and phenotype fields such as `COO`.
 * Project purpose: training and internal testing for the DLBCL Cell-of-Origin
   Random Forest classifier.
-* Repository status: expected at this path, but not present in the current local
-  checkout.
+* Repository status: included at this project-relative path.
 * Source/accession/publication: missing from repository documentation.
 
 ### `data/dlbcl/cohort_1/DLBCL.eSet.1.rds` to `DLBCL.eSet.4.rds`
@@ -68,8 +67,7 @@ data/dlbcl/cohort_1/DLBCL.eSet.4.rds
   using `header = TRUE` and `row.names = 1`.
 * Project purpose: ESCC molecular subtyping by NMF and consensus clustering,
   followed by differential expression analysis and pathway interpretation.
-* Repository status: expected at this path, but not present in the current local
-  checkout.
+* Repository status: included at this project-relative path.
 * Source/accession/publication: missing from repository documentation.
 
 ## Supplementary CNN Image Inputs
@@ -87,7 +85,7 @@ data/images/D1.jpg
 data/images/D2.jpg
 ```
 
-These files were not found in the current local checkout. Their biological
+These files are included at the project-relative paths above. Their biological
 meaning, source, license, and accession information are unknown from the
 repository.
 
